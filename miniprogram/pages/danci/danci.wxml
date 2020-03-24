@@ -1,0 +1,18 @@
+<!--miniprogram/pages/danci/danci.wxml-->
+<view style="background:url({{dancibenbeijing}});background-repeat:no-repeat;background-size:100% 200%;"  class="main_c">
+  <view wx:for="{{array}}" wx:key="item" class="danci">
+    <view wx:if="{{item.suoyin != NULL}}"><text>{{item.suoyin}}</text></view> 
+    <text wx:else>{{item.suoyin}}{{item.riwen}} {{item.jiaming}}\n{{item.zhongwen}}/{{item.cixing}}\n</text>
+  </view>
+  <!--右侧导航栏-->
+  <view class="right-nav" style="right:30px">
+ <view bindtap="bindsuoyin" wx:for="{{daohanglan1}}" wx:key="unique" data-id='{{item.suoyinid}}' data-id2='{{item.suoyin}}' style="height:22px" >
+ {{item.suoyin}}
+ </view>
+</view>
+  <view class="right-nav" style="right:0px">
+ <view bindtap="bindsuoyin" wx:for="{{daohanglan2}}" wx:key="unique"  data-id='{{item.suoyinid}}' style="height:22px">
+ {{item.suoyin}}
+ </view>
+ </view>
+</view>

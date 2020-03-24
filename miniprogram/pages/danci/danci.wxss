@@ -1,0 +1,22 @@
+/* miniprogram/pages/danci/danci.wxss */
+page{
+}
+.main_c{
+  min-height: 100%;
+  min-width: 100rpx;
+}
+.danci{
+  border-bottom:1px black solid;
+  vertical-align: middle;
+}
+.right-nav{
+ width: 30px;
+ height: 100%;
+ color:  black;
+ text-align: center;
+ position: fixed;
+ bottom: 0;
+ background-color: rgba(252, 225, 191, 0.479);
+ z-index: 9;
+ opacity:0.5;
+}

@@ -1,0 +1,44 @@
+<!--main.wxml-->
+<view style="background:url({{background}})"  class="main_c" bindtap="hidexinxi">
+<cover-image src="../../images/touxiangkuang.png" class="touxiangkuang"  catchtap="changeYL"></cover-image>
+<image src="{{touxiang}}" class="touxiang"></image>
+<!--<canvas canvas-id="usernamebg"></canvas>-->
+<view class='usernamebg'><text>{{username}}</text></view>
+  <button class="start_button"  bindtap="startGame">
+    <image src="../../images/start.png" class="start">
+    </image>
+  </button>
+  <view class="set_view"  bindtap="showSet">
+  <button class="set_button">
+    <image src="../../images/set.png" class="set">
+    </image>
+  </button>
+  <text class="set_text" >設定</text>
+  </view>
+  <view class="word_view"  bindtap="urldanci">
+  <button class="word_button">
+    <image src="../../images/word.jpg" class="word">
+    </image>
+  </button>
+  <text class="word_text">単語</text>
+  </view>
+  -<!--个人信息模态框-->
+   <view class="modal-dialog" wx:if="{{showModal}}">
+      <text>昵称：</text><text>{{username}}\n</text>
+      <text>性别：</text><text>{{gender}}\n</text>
+      <text>通关数：</text><text>{{tongGuanShu}}\n</text>
+      <text>金币：</text><text>8888\n</text>
+    </view>
+    <!--设置模态框-->
+  <view class="setZhezhao {{isSetTrue?'isSetShow':'isSetHide'}}">
+    <view class='setZhezhaoContent'>
+      <view class='setZhezhaoText'>
+        <switch style="display: block;" type="switch" checked="true" bindchange="bgMusicStop"> 背景音乐 </switch>
+        <switch style="display: block;position:relative;left:-20px" type="switch" checked="true" bindchange="bgSoundStop"> 音效 </switch>
+        <text>技术人员:BHHブランクFSGグループ</text>
+      </view>
+      <image style="background:url({{sethide}})" class='setHide' bindtap='hideSet'></image>
+    </view>    
+  </view>
+  <button class="login" open-type="getUserInfo" bindgetuserinfo="getUserInfo" hidden="{{login}}">请登录</button>
+</view>

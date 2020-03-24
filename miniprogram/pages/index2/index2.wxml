@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+
+  <button type="primary" size="mini" lang="zh_CN" bindtap="tijiao"> 提交 </button>
+  <button type="primary" size="mini" lang="zh_CN" bindtap="showSet"> 设置 </button>
+  <!--  设置提示  -->
+  <view class="setZhezhao {{isSetTrue?'isSetShow':'isSetHide'}}">
+    <view class='setZhezhaoContent'>
+      <view class='setZhezhaoText'>
+        <switch style="display: block;"> 背景音乐 </switch>
+        <text>技术人员相关信息</text>
+      </view>
+      <image src='../images/set-hide.png' class='setHide' bindtap='hideSet'></image>
+    </view>    
+  </view>
+  <!--  end  -->
+
+</view>

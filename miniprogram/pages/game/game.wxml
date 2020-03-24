@@ -1,0 +1,22 @@
+<!--miniprogram/pages/game/game.wxml  -->
+<view wx:if="{{view2}}" style="background:url({{background}});background-size:100% 100%" class="main_c" >
+<view class="jindutiao"><view class="jindutiao2" style="width: {{jindutiao}}%;"></view></view>
+</view>
+<view wx:else style="background:url({{background2}});background-size:100% 100%" class="main_c2" >
+  <view class="daTiQu" >
+     <view class="table" style="height:{{table_height}}px" wx:for="{{datiAr}}" wx:key="item1" wx:for-index="index1" wx:for-item="item1">
+        <view class="tr" style="height:{{tr_height}}px">
+         <view class="{{current_item_datiqu === index1+''+index?'xuanzhong':'th'}}" style="magin:" wx:for='{{item1}}' wx:key="item" data-item="{{item}}" data-key="{{index1+''+index}}" data-key2="{{index}}" data-hangmu="{{index1}}" bindtap='daTiQuXuanCi' >
+            {{item}}
+            </view>
+         </view>
+      </view>
+    </view>
+  <view class="xuanCiQu">
+    <view class="table" >
+      <view class="tr">
+        <view  class="{{current_item_xuanciqu === index?'xuanzhong':'th'}}" wx:for='{{xuanCiAr}}' wx:key="item" data-item="{{item}}" data-key="{{index}}" bindtap="xuanCiQuXuanCi">{{item}}</view>
+        </view>
+      </view> 
+    </view>-
+  </view>
